@@ -21,16 +21,16 @@ public class transactionDetails {
 	public void setTransaction_id(int transaction_id) {
 		this.transaction_id = transaction_id;
 	}
-	public Long getFrom_acc() {
+	public long getFrom_acc() {
 		return from_acc;
 	}
-	public void setFrom_acc(Long from_acc) {
+	public void setFrom_acc(long from_acc) {
 		this.from_acc = from_acc;
 	}
-	public Long getTo_acc() {
+	public long getTo_acc() {
 		return to_acc;
 	}
-	public void setTo_acc(Long to_acc) {
+	public void setTo_acc(long to_acc) {
 		this.to_acc = to_acc;
 	}
 	public int getAmount() {
@@ -45,8 +45,8 @@ public class transactionDetails {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	private Long from_acc;
-	private Long to_acc;
+	private long from_acc;
+	private long to_acc;
 	private int amount;
 	private Date date;
 	private int user_id;

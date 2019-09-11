@@ -1,10 +1,12 @@
 package com.bank.bankingApp.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bank.bankingApp.dto.TransationListDTO;
 import com.bank.bankingApp.dto.tranacationRequestDTO;
 import com.bank.bankingApp.entity.UserDetails;
 import com.bank.bankingApp.entity.transactionDetails;
@@ -31,18 +33,7 @@ public class UserServiceImpl implements UserService {
 		return "User Registered";
 	}
 
-	@Override
-	public UserDetails getUserByID(int user_id) {
-		UserDetails store = null;
-		java.util.Optional<UserDetails> userdata = UserRepository.findById(user_id);
-
-		if (userdata.isPresent()) {
-			store = userdata.get();
-		}
-		return store;
-	}
-
-	// to transfer amount from one account to another account
+	// Fund Transfer API
 	@Override
 	public String transation(tranacationRequestDTO transdto, int amount) {
 		
@@ -78,7 +69,26 @@ public class UserServiceImpl implements UserService {
 		 * transactionRepository.save(transactionDetails);
 		 * 
 		 * UserRepository.save(user1_id); UserRepository.save(user2_id);
-		 */		 		return "Transaction Completed";
+		 */		 		
+		
+		return "Transaction Completed";
 	}
 
+	// fetching transaction details API
+	@Override
+	public List<transactionDetails> getUserByAccNum(TransationListDTO accountNum) {
+		
+		
+		/*
+		 * List<transactionDetails> store=null; java.util.Optional
+		 * List<transactionDetails> userdata =
+		 * transactionRepository.findByAccount(accountNum.getAccountNum());
+		 * 
+		 * if(userdata.isPresent()) { store=userdata.get(); } return store;
+		 */
+		
+		 List<transactionDetails> userdata = transactionRepository.findByAccount(accountNum.getAccountNum());
+		 return userdata;
+
+	}
 }

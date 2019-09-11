@@ -12,7 +12,10 @@ import com.bank.bankingApp.entity.transactionDetails;
 public interface transactionRepository extends JpaRepository<transactionDetails, Integer>{
 
 	
-	@Query("FROM transactionDetails td WHERE td.from_acc = ?1")
-	public List<transactionDetails> findByAccount(long from_acc);
+//	@Query("FROM transactionDetails td WHERE td.from_acc = ?")
+	public List<transactionDetails> findByFromAcc(long accountNum);
+	
+	
+	
 	
 }

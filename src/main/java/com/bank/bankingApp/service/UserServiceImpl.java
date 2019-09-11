@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bank.bankingApp.dto.TransationListDTO;
 import com.bank.bankingApp.dto.tranacationRequestDTO;
 import com.bank.bankingApp.entity.UserDetails;
 import com.bank.bankingApp.entity.transactionDetails;
@@ -76,7 +75,7 @@ public class UserServiceImpl implements UserService {
 
 	// fetching transaction details API
 	@Override
-	public List<transactionDetails> getUserByAccNum(TransationListDTO accountNum) {
+	public List<transactionDetails> getUserByAccNum(long accountNum) {
 		
 		
 		/*
@@ -87,8 +86,22 @@ public class UserServiceImpl implements UserService {
 		 * if(userdata.isPresent()) { store=userdata.get(); } return store;
 		 */
 		
-		 List<transactionDetails> userdata = transactionRepository.findByAccount(accountNum.getAccountNum());
+		 List<transactionDetails> userdata = transactionRepository.findByFromAcc(accountNum);
 		 return userdata;
 
 	}
+
+	@Override
+	public List<transactionDetails> getTxnDetails(long accountNum) {
+		List<transactionDetails> td = transactionRepository.findByFromAcc(accountNum);
+		return td;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

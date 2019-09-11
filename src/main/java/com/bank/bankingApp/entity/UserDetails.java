@@ -41,10 +41,10 @@ public class UserDetails {
 	public void setMobile(long mobile) {
 		this.mobile = mobile;
 	}
-	public Long getAccountNum() {
+	public long getAccountNum() {
 		return accountNum;
 	}
-	public void setAccountNum(Long accountNum) {
+	public void setAccountNum(long accountNum) {
 		this.accountNum = accountNum;
 	}
 	public int getBalance() {
@@ -60,7 +60,7 @@ public class UserDetails {
 	private String pwd;
 	private String email;
 	private long mobile;
-	private Long accountNum;
+	private long accountNum;
 	private int balance;
 
 }

@@ -60,7 +60,7 @@ public class UserDetails {
 	private String pwd;
 	private String email;
 	private long mobile;
-	private long accountNum;
+	private Long accountNum;
 	private int balance;
 
 }

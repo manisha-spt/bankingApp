@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
 
 	// fetching transaction details API
 	@Override
-	public List<transactionDetails> getUserByAccNum(long accountNum) {
+	public List<transactionDetails> getUserByAccNum(Long accountNum) {
 		
 		
 		/*
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<transactionDetails> getTxnDetails(long accountNum) {
+	public List<transactionDetails> getTxnDetails(Long accountNum) {
 		List<transactionDetails> td = transactionRepository.findByFromAcc(accountNum);
 		return td;
 	}

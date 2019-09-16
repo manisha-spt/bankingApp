@@ -3,7 +3,6 @@ package com.bank.bankingApp.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.bank.bankingApp.entity.transactionDetails;
@@ -13,7 +12,7 @@ public interface transactionRepository extends JpaRepository<transactionDetails,
 
 	
 //	@Query("FROM transactionDetails td WHERE td.from_acc = ?")
-	public List<transactionDetails> findByFromAcc(long accountNum);
+	public List<transactionDetails> findByFromAcc(Long accountNum);
 	
 	
 	

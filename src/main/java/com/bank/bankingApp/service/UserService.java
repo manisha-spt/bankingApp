@@ -9,9 +9,9 @@ import com.bank.bankingApp.entity.transactionDetails;
 public interface UserService {
 
 	public String storeUserDetails(UserDetails user);
-	public List<transactionDetails> getUserByAccNum(long account);
+	public List<transactionDetails> getUserByAccNum(Long account);
 	public String transation(tranacationRequestDTO transdto, int amount);
 	
 	
-	public List<transactionDetails> getTxnDetails(long accountNum);
+	public List<transactionDetails> getTxnDetails(Long accountNum);
 }
